@@ -1,0 +1,7 @@
+---
+applications:
+- name: regningerWeb
+  memory: 1G
+  random-route: true
+  path: target/RegningerWeb-1.0.0.jar
+
