@@ -47,7 +47,6 @@
    </profiles>
 
     <dependencyManagement>
-
         <dependencies>
             <dependency>
                 <groupId>org.springframework</groupId>
@@ -60,6 +59,28 @@
     </dependencyManagement>
 
      <dependencies>
+         <!-- angularjs -->
+         <dependency>
+             <groupId>org.webjars</groupId>
+             <artifactId>angularjs</artifactId>
+             <version>1.4.3</version>
+         </dependency>
+         <dependency>
+             <groupId>org.webjars</groupId>
+             <artifactId>jquery</artifactId>
+             <version>2.1.1</version>
+         </dependency>
+         <dependency>
+             <groupId>org.webjars</groupId>
+             <artifactId>bootstrap</artifactId>
+             <version>3.2.0</version>
+         </dependency>
+         <dependency>
+             <groupId>org.webjars</groupId>
+             <artifactId>webjars-locator</artifactId>
+         </dependency>
+
+         <!-- Spring -->
           <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -68,6 +89,16 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
+         <!-- security.oauth -->
+         <dependency>
+             <groupId>org.springframework.boot</groupId>
+             <artifactId>spring-boot-starter-security</artifactId>
+         </dependency>
+         <dependency>
+             <groupId>org.springframework.security.oauth</groupId>
+             <artifactId>spring-security-oauth2</artifactId>
+         </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>
@@ -119,6 +150,7 @@
 
 
         <!--  Dato mapping -->
+         <!-- http://docs.cloudfoundry.org/buildpacks/java/build-tool-int.html -->
         <dependency>
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-joda</artifactId>
@@ -134,7 +166,6 @@
             <artifactId>usertype.core</artifactId>
             <version>5.0.0.GA</version>
         </dependency>
-
          <dependency>
              <groupId>org.flywaydb</groupId>
              <artifactId>flyway-core</artifactId>
@@ -156,7 +187,34 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <!-- static endres, oppdatering -->
+                    <addResources>true</addResources>
+                </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.cloudfoundry</groupId>
+                <artifactId>cf-maven-plugin</artifactId>
+                <version>1.1.2</version>
+                <configuration>
+                    <username>dragerot@gmail.com</username>
+                    <password>.Heiw442123456</password>
+
+                    <target>http://api.run.pivotal.io</target>
+                    <org>dragerot.net</org>
+                    <space>development</space>
+                    <appname>regningerWeb</appname>
+                    <!-- https://regningerweb.cfapps.io -->
+                    <url>https://regningerweb.cfapps.io</url>
+                    <memory>512</memory>
+                    <instances>1</instances>
+                    <env>
+                        <miljo>utvikling</miljo>
+                    </env>
+
+                </configuration>
+            </plugin>
+
             <!--<plugin>-->
                 <!--<groupId>org.flywaydb</groupId>-->
                 <!--<artifactId>flyway-maven-plugin</artifactId>-->
