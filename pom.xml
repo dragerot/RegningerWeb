@@ -59,26 +59,30 @@
     </dependencyManagement>
 
      <dependencies>
+
+         <!-- react -->
+
+
          <!-- angularjs -->
-         <dependency>
-             <groupId>org.webjars</groupId>
-             <artifactId>angularjs</artifactId>
-             <version>1.4.3</version>
-         </dependency>
-         <dependency>
-             <groupId>org.webjars</groupId>
-             <artifactId>jquery</artifactId>
-             <version>2.1.1</version>
-         </dependency>
-         <dependency>
-             <groupId>org.webjars</groupId>
-             <artifactId>bootstrap</artifactId>
-             <version>3.2.0</version>
-         </dependency>
-         <dependency>
-             <groupId>org.webjars</groupId>
-             <artifactId>webjars-locator</artifactId>
-         </dependency>
+         <!--<dependency>-->
+             <!--<groupId>org.webjars</groupId>-->
+             <!--<artifactId>angularjs</artifactId>-->
+             <!--<version>1.4.3</version>-->
+         <!--</dependency>-->
+         <!--<dependency>-->
+             <!--<groupId>org.webjars</groupId>-->
+             <!--<artifactId>jquery</artifactId>-->
+             <!--<version>2.1.1</version>-->
+         <!--</dependency>-->
+         <!--<dependency>-->
+             <!--<groupId>org.webjars</groupId>-->
+             <!--<artifactId>bootstrap</artifactId>-->
+             <!--<version>3.2.0</version>-->
+         <!--</dependency>-->
+         <!--<dependency>-->
+             <!--<groupId>org.webjars</groupId>-->
+             <!--<artifactId>webjars-locator</artifactId>-->
+         <!--</dependency>-->
 
          <!-- Spring -->
           <dependency>
@@ -91,15 +95,16 @@
         </dependency>
 
          <!-- security.oauth -->
-         <dependency>
-             <groupId>org.springframework.boot</groupId>
-             <artifactId>spring-boot-starter-security</artifactId>
-         </dependency>
-         <dependency>
-             <groupId>org.springframework.security.oauth</groupId>
-             <artifactId>spring-security-oauth2</artifactId>
-         </dependency>
+         <!--<dependency>-->
+             <!--<groupId>org.springframework.boot</groupId>-->
+             <!--<artifactId>spring-boot-starter-security</artifactId>-->
+         <!--</dependency>-->
+         <!--<dependency>-->
+             <!--<groupId>org.springframework.security.oauth</groupId>-->
+             <!--<artifactId>spring-security-oauth2</artifactId>-->
+         <!--</dependency>-->
 
+         <!-- DB -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
@@ -188,8 +193,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <!-- static endres, oppdatering -->
-                    <addResources>true</addResources>
+                   <addResources>true</addResources>
                 </configuration>
             </plugin>
             <plugin>
@@ -199,19 +203,20 @@
                 <configuration>
                     <username>dragerot@gmail.com</username>
                     <password>.Heiw442123456</password>
-
                     <target>http://api.run.pivotal.io</target>
                     <org>dragerot.net</org>
                     <space>development</space>
-                    <appname>regningerWeb</appname>
-                    <!-- https://regningerweb.cfapps.io -->
-                    <url>https://regningerweb.cfapps.io</url>
+                    <appname>regningerweb${version}</appname>
+                    <urls>
+                        <url>regningerweb.cfapps.io</url>
+                    </urls>
+                    <path></path>
                     <memory>512</memory>
+                    <diskQuota>512</diskQuota>
                     <instances>1</instances>
                     <env>
-                        <miljo>utvikling</miljo>
+                        <navn>Tore Gard</navn>
                     </env>
-
                 </configuration>
             </plugin>
 

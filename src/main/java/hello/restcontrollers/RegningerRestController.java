@@ -16,6 +16,15 @@ public class RegningerRestController {
     @Autowired
     StromMaalingerRepository stromMaalingerRepository;
 
+    @RequestMapping(
+            value = "/ping",
+            method = RequestMethod.GET,
+            produces = "application/json"
+    )
+    public ResponseEntity<Void> ping() {
+       return new ResponseEntity<Void>(HttpStatus.OK);
+    }
+
     /**
      * Eksempel: http://localhost:8080/stromsystem/registrer
      * {
