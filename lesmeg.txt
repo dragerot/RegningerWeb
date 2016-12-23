@@ -1,1 +1,1 @@
-cf login -a api.run.pivotal.io -u dragerot@gmail.com -p ".Heiw442123456" -o dragerot.net -s development
+cf login -a api.run.pivotal.io -u user-p "password" -o dragerot.net -s development
