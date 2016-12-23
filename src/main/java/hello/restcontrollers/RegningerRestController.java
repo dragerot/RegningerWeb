@@ -21,8 +21,8 @@ public class RegningerRestController {
             method = RequestMethod.GET,
             produces = "application/json"
     )
-    public ResponseEntity<Void> ping() {
-       return new ResponseEntity<Void>(HttpStatus.OK);
+    public Boolean ping() {
+       return new Boolean(true);
     }
 
     /**
