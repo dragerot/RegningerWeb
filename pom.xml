@@ -201,8 +201,8 @@
                 <artifactId>cf-maven-plugin</artifactId>
                 <version>1.1.2</version>
                 <configuration>
-                    <username>dragerot@gmail.com</username>
-                    <password>.Heiw442123456</password>
+                    <username>xx</username>
+                    <password>xx</password>
                     <target>http://api.run.pivotal.io</target>
                     <org>dragerot.net</org>
                     <space>development</space>
